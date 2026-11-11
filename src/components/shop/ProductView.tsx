@@ -37,6 +37,7 @@ export function ProductView({
   const [slide, setSlide] = useState(0);
   const [barVisible, setBarVisible] = useState(false);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const thumbsRef = useRef<HTMLDivElement>(null);
   const add = useCart((s) => s.add);
   const isPillow = product.category === "pillow-covers";
   const cat = CATEGORIES.find((c) => c.id === product.category);
@@ -46,6 +47,13 @@ export function ProductView({
     ...(!isPillow ? [{ key: "bed", label: "On your bed" }] : []),
     { key: "made", label: "Being made" },
   ];
+
+  // keep the active thumbnail in view inside the strip (horizontal only, never moves the page)
+  useEffect(() => {
+    const row = thumbsRef.current;
+    const el = row?.children[slide] as HTMLElement | undefined;
+    if (row && el) row.scrollTo({ left: el.offsetLeft - row.clientWidth / 2 + el.clientWidth / 2, behavior: "smooth" });
+  }, [slide]);
 
   useEffect(() => {
     const io = new IntersectionObserver(([e]) => setBarVisible(!e.isIntersecting && e.boundingClientRect.top < 0), { threshold: 0 });
@@ -120,7 +128,7 @@ export function ProductView({
               </span>
             </div>
             {slides.length > 1 && (
-              <div className="-mx-1 mt-4 flex gap-3 overflow-x-auto px-1 py-1 [scrollbar-width:thin]">
+              <div ref={thumbsRef} className="-mx-1 mt-4 flex gap-3 overflow-x-auto scroll-smooth px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {slides.map((s, i) => (
                   <button
                     key={s.key}

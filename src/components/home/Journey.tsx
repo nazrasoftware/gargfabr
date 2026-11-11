@@ -5,7 +5,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "re
 import clsx from "clsx";
 import { VideoLoop } from "@/components/ui/VideoLoop";
 import { Reveal, SplitWords } from "@/components/motion/Reveal";
-import { CottonArt, ParcelArt } from "./JourneyArt";
+import { CottonArt } from "./JourneyArt";
 
 type Chapter = {
   n: string;
@@ -63,7 +63,15 @@ const CHAPTERS: Chapter[] = [
     hi: "आपके घर",
     title: "Folded, and on its way",
     body: "Packed with care and delivered across India in 6–8 working days.",
-    media: <ParcelArt />,
+    media: (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src="/media/journey-step5.webp"
+        alt="A woman's hands folding a finished white quilt beside kraft paper, jute twine and a blank tag"
+        loading="lazy"
+        className="h-full w-full object-cover"
+      />
+    ),
     shape: "arch",
     tint: "bg-raw",
   },
