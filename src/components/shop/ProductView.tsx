@@ -91,7 +91,7 @@ export function ProductView({
           / <span className="text-indigo">{product.name}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
           {/* ───── gallery ───── */}
           <div className="w-full lg:sticky lg:top-24 lg:w-[min(100%,max(24rem,calc(100svh-15rem)))] lg:self-start lg:justify-self-center">
             <div className="relative aspect-square overflow-hidden rounded-[36px] bg-raw" data-cursor={slides.length > 1 ? "Drag" : undefined}>
@@ -120,13 +120,13 @@ export function ProductView({
               </span>
             </div>
             {slides.length > 1 && (
-              <div className="mt-4 flex gap-3">
+              <div className="-mx-1 mt-4 flex gap-3 overflow-x-auto px-1 py-1 [scrollbar-width:thin]">
                 {slides.map((s, i) => (
                   <button
                     key={s.key}
                     onClick={() => setSlide(i)}
                     className={clsx(
-                      "relative h-20 w-20 overflow-hidden rounded-2xl bg-raw ring-1 transition sm:h-24 sm:w-24",
+                      "relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-raw ring-1 transition sm:h-24 sm:w-24 lg:h-[4.5rem] lg:w-[4.5rem]",
                       i === slide ? "ring-2 ring-madder" : "ring-indigo/10 opacity-70 hover:opacity-100",
                     )}
                     aria-label={`Show ${s.label}`}
