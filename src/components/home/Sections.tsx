@@ -33,8 +33,8 @@ export function TrustMarquee() {
 /* ───────────── Manifesto (words light up as you read) ───────────── */
 export function Manifesto() {
   return (
-    <section className="relative bg-cotton py-16 lg:pb-24 lg:pt-44" aria-label="Who we are">
-      <div className="mx-auto grid max-w-[1440px] gap-9 px-4 sm:px-8 lg:grid-cols-[1fr_2.4fr]">
+    <section className="relative bg-cotton py-9 sm:py-16 lg:pb-24 lg:pt-44" aria-label="Who we are">
+      <div className="mx-auto grid max-w-[1440px] gap-6 sm:gap-9 px-4 sm:px-8 lg:grid-cols-[1fr_2.4fr]">
         <div className="flex flex-col gap-6">
           <p className="eyebrow text-madder">
             Every piece has a story <span className="font-hindi normal-case tracking-normal text-sand-deep">· कहानी</span>
@@ -60,37 +60,37 @@ export function Founders() {
     { name: "Babita Gupta", role: "Co-Founder & Operations Head", from: "Ringas, Rajasthan", mono: "ब" },
   ];
   return (
-    <section className="relative bg-cotton py-16 lg:py-40" aria-label="Founders">
+    <section className="relative bg-cotton py-9 lg:py-40" aria-label="Founders">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
-        <div className="grid gap-9 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
           <div>
             <Reveal>
               <p className="eyebrow text-madder">
                 The family behind it <span className="font-hindi normal-case tracking-normal text-sand-deep">· परिवार</span>
               </p>
             </Reveal>
-            <SplitWords as="h2" text="Rooted in Rajasthan." className="display-lg mt-5 block max-w-[10ch]" italicWords={["Rajasthan"]} />
+            <SplitWords as="h2" text="Rooted in Rajasthan." className="display-lg mt-3 sm:mt-5 block" italicWords={["Rajasthan"]} />
             <Reveal delay={0.2}>
-              <p className="lede mt-8 max-w-md text-muted">
+              <p className="lede mt-5 sm:mt-8 max-w-md text-muted">
                 We take pride in bringing traditional Indian textile craftsmanship into homes, with products that pair timeless techniques with
                 everyday comfort.
               </p>
             </Reveal>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6">
             {people.map((p, i) => (
               <Reveal key={p.name} delay={i * 0.15}>
                 <div className="group">
                   <div className="arch relative grid aspect-[3/4] place-items-center overflow-hidden bg-raw">
                     <div className="quilt-grid absolute inset-0 opacity-70 transition-transform duration-[1.5s] group-hover:scale-110" />
-                    <span className="relative font-hindi text-[7rem] leading-none text-indigo/85 transition-transform duration-700 group-hover:scale-110">
+                    <span className="relative font-hindi text-[4rem] leading-none text-indigo/85 sm:text-[7rem] transition-transform duration-700 group-hover:scale-110">
                       {p.mono}
                     </span>
-                    <span className="absolute bottom-6 rounded-full bg-cotton/80 px-3 py-1 text-[0.65rem] uppercase tracking-[0.16em] text-muted">
+                    <span className="absolute bottom-6 hidden rounded-full bg-cotton/80 px-3 py-1 sm:block text-[0.65rem] uppercase tracking-[0.16em] text-muted">
                       Portrait coming soon
                     </span>
                   </div>
-                  <p className="display-sm mt-5">{p.name}</p>
+                  <p className="display-sm mt-3 sm:mt-5">{p.name}</p>
                   <p className="mt-1 text-sm text-muted">
                     {p.role} · {p.from}
                   </p>
@@ -107,18 +107,18 @@ export function Founders() {
 /* ───────────── Bulk band ───────────── */
 export function BulkBand() {
   return (
-    <section className="relative overflow-hidden bg-madder py-14 text-cotton lg:py-28" aria-label="Bulk orders">
+    <section className="relative overflow-hidden bg-madder py-8 text-cotton lg:py-28" aria-label="Bulk orders">
       <Marquee
         speed={60}
         className="font-serif text-[clamp(3rem,9vw,8rem)] font-[330] leading-none opacity-20"
         items={["Hotels", "Homestays", "Weddings", "Corporate gifting", "Hostels", "NGOs"]}
         separator={<StitchStar className="h-8 w-8" />}
       />
-      <div className="relative mx-auto mt-8 flex max-w-[1440px] flex-col items-start gap-8 px-4 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="relative mx-auto mt-5 sm:mt-8 flex max-w-[1440px] flex-col items-start gap-5 sm:gap-8 px-4 sm:px-8 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <p className="eyebrow text-cotton/80">Bulk & gifting · थोक</p>
-          <h2 className="display-md mt-4 max-w-[18ch]">Ordering for a hotel, a wedding or a team?</h2>
-          <p className="lede mt-4 max-w-lg text-cotton/80">Tell us what you need. We&apos;ll reply on WhatsApp with pricing and timelines.</p>
+          <h2 className="display-md mt-3 sm:mt-4">Ordering for a hotel, a wedding or a team?</h2>
+          <p className="lede mt-3 sm:mt-4 max-w-lg text-cotton/80">Tell us what you need. We&apos;ll reply on WhatsApp with pricing and timelines.</p>
         </div>
         <Button href="/bulk-orders" variant="light" size="lg">
           Start a bulk enquiry →
@@ -132,7 +132,7 @@ export function BulkBand() {
 export function JournalTeaser({ posts }: { posts: Post[] }) {
   if (!posts.length) return null;
   return (
-    <section className="bg-cotton py-16 lg:py-36" aria-label="Journal">
+    <section className="bg-cotton py-9 lg:py-36" aria-label="Journal">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
         <div className="flex items-end justify-between gap-6">
           <SplitWords as="h2" text="From the journal." className="display-lg block" italicWords={["journal"]} />
@@ -140,11 +140,11 @@ export function JournalTeaser({ posts }: { posts: Post[] }) {
             All stories →
           </Link>
         </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
+        <div className="mt-5 -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0 sm:pb-0 sm:mt-10 md:grid md:grid-cols-3 md:gap-8">
           {posts.slice(0, 3).map((p, i) => (
-            <Reveal key={p.id} delay={i * 0.12}>
+            <Reveal key={p.id} delay={i * 0.12} className="w-[78%] shrink-0 snap-start md:w-auto">
               <Link href={`/journal/${p.slug}`} className="group block" data-cursor="Read">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-raw">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[22px] bg-raw sm:aspect-[4/3] sm:rounded-[28px]">
                   {p.cover && (
                     <Parallax speed={0.08} className="absolute inset-0 scale-110">
                       <Image
@@ -157,9 +157,9 @@ export function JournalTeaser({ posts }: { posts: Post[] }) {
                     </Parallax>
                   )}
                 </div>
-                <p className="mt-5 text-xs uppercase tracking-[0.16em] text-muted">{fmtDate(p.publishedAt)}</p>
+                <p className="mt-3 sm:mt-5 text-xs uppercase tracking-[0.16em] text-muted">{fmtDate(p.publishedAt)}</p>
                 <h3 className="display-sm mt-2 text-[1.5rem] transition-colors group-hover:text-madder">{p.title}</h3>
-                <p className="mt-2 text-muted">{p.excerpt}</p>
+                <p className="mt-1.5 line-clamp-2 text-muted">{p.excerpt}</p>
               </Link>
             </Reveal>
           ))}
@@ -191,13 +191,13 @@ export const FAQ_ITEMS = [
 
 export function Faq() {
   return (
-    <section className="bg-cotton pb-16 lg:pb-40" aria-label="Questions">
-      <div className="mx-auto grid max-w-[1440px] gap-9 px-4 sm:px-8 lg:grid-cols-[1fr_1.6fr]">
+    <section className="bg-cotton pb-9 lg:pb-40" aria-label="Questions">
+      <div className="mx-auto grid max-w-[1440px] gap-6 sm:gap-9 px-4 sm:px-8 lg:grid-cols-[1fr_1.6fr]">
         <div>
           <p className="eyebrow text-madder">
             Questions <span className="font-hindi normal-case tracking-normal text-sand-deep">· सवाल</span>
           </p>
-          <h2 className="display-lg mt-5 max-w-[10ch]">Good to know.</h2>
+          <h2 className="display-lg mt-3 sm:mt-5">Good to know.</h2>
         </div>
         <Accordion items={FAQ_ITEMS} defaultOpen={0} />
       </div>

@@ -77,7 +77,7 @@ export function Preloader() {
             </div>
 
             {/* The stitch + travelling needle */}
-            <svg viewBox="0 0 320 24" className="mt-6 w-[260px] sm:w-[320px]" fill="none" aria-hidden>
+            <svg viewBox="0 0 320 24" className="mt-4 sm:mt-6 w-[260px] sm:w-[320px]" fill="none" aria-hidden>
               <mask id="pre-m">
                 <motion.path
                   d="M4 12 C 80 2, 160 22, 316 10"

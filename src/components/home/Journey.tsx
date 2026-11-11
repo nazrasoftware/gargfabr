@@ -88,7 +88,7 @@ export function Journey() {
                 The journey <span className="font-hindi normal-case tracking-normal text-sand-deep">· सफ़र</span>
               </p>
             </Reveal>
-            <SplitWords as="h2" text="From cotton to your bed." className="display-lg mt-5 block max-w-[14ch]" italicWords={["bed"]} />
+            <SplitWords as="h2" text="From cotton to your bed." className="display-lg mt-3 sm:mt-5 block" italicWords={["bed"]} />
           </div>
           <Reveal delay={0.2} className="max-w-sm text-muted lg:pb-3">
             Five steps, all by hand. Scroll to follow a quilt from raw cotton to your doorstep.
@@ -156,7 +156,7 @@ function HorizontalTrack() {
           </svg>
 
           {CHAPTERS.map((c, i) => (
-            <article key={c.n} className="relative z-10 flex h-[74vh] w-[min(64vw,980px)] shrink-0 items-center gap-10">
+            <article key={c.n} className="relative z-10 flex h-[74vh] w-[min(64vw,980px)] shrink-0 items-center gap-6 sm:gap-10">
               <div
                 className={clsx(
                   "relative h-full w-[54%] shrink-0 overflow-hidden",
@@ -178,8 +178,8 @@ function HorizontalTrack() {
                 <p className="eyebrow mt-2 text-madder">
                   Step {i + 1} <span className="font-hindi normal-case tracking-normal text-sand-deep">· {c.hi}</span>
                 </p>
-                <h3 className="display-md mt-4">{c.title}</h3>
-                <p className="lede mt-4 max-w-[22rem] text-muted">{c.body}</p>
+                <h3 className="display-md mt-3 sm:mt-4">{c.title}</h3>
+                <p className="lede mt-3 sm:mt-4 max-w-[22rem] text-muted">{c.body}</p>
               </div>
             </article>
           ))}
@@ -214,9 +214,9 @@ function HorizontalTrack() {
 
 function VerticalStory() {
   return (
-    <div className="relative px-4 pb-14 sm:px-8 lg:hidden">
+    <div className="relative px-4 pb-8 sm:pb-14 sm:px-8 lg:hidden">
       <div className="absolute bottom-24 left-[2.15rem] top-0 w-px sm:left-[3.15rem]" style={{ backgroundImage: "linear-gradient(to bottom, #C9B28F 55%, transparent 0)", backgroundSize: "1px 9px" }} />
-      <ol className="space-y-16">
+      <ol className="space-y-8">
         {CHAPTERS.map((c, i) => (
           <MobileStep key={c.n} c={c} i={i} />
         ))}
@@ -249,11 +249,11 @@ function MobileStep({ c, i }: { c: Chapter; i: number }) {
       <p className="eyebrow pt-2 text-madder">
         Step {i + 1} <span className="font-hindi normal-case tracking-normal text-sand-deep">· {c.hi}</span>
       </p>
-      <h3 className="display-md mt-3 text-[2.1rem]">{c.title}</h3>
-      <p className="mt-3 text-muted">{c.body}</p>
+      <h3 className="display-md mt-2 text-[1.6rem]">{c.title}</h3>
+      <p className="mt-1.5 text-muted">{c.body}</p>
       <motion.div
         style={{ scale, borderRadius: c.shape === "round" ? radius : undefined }}
-        className={clsx("relative mt-6 aspect-[4/5] overflow-hidden", c.shape === "arch" && "arch", c.tint)}
+        className={clsx("relative mt-3 aspect-[16/11] overflow-hidden sm:mt-6 sm:aspect-[4/5]", c.shape === "arch" && "arch", c.tint)}
       >
         {c.media}
       </motion.div>

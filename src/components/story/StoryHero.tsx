@@ -29,7 +29,7 @@ export function StoryHero() {
         <SplitWords
           as="h1"
           text="Empowering women, one stitch at a time."
-          className="display-xl mt-4 block max-w-[13ch] text-[clamp(3rem,8.5vw,9rem)] [text-shadow:0_2px_30px_rgba(247,243,236,.9)]"
+          className="display-xl mt-3 sm:mt-4 block text-[clamp(3rem,8.5vw,9rem)] [text-shadow:0_2px_30px_rgba(247,243,236,.9)]"
           italicWords={["stitch"]}
           trigger="mount"
         />

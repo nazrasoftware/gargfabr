@@ -18,7 +18,7 @@ export function OrderSuccess() {
   }, []);
 
   return (
-    <div className="relative grid min-h-svh place-items-center overflow-hidden bg-cotton px-4 pb-20 pt-32">
+    <div className="relative grid min-h-svh place-items-center overflow-hidden bg-cotton px-4 pb-11 sm:pb-20 pt-28 sm:pt-32">
       <div className="quilt-grid pointer-events-none absolute inset-0 opacity-60" />
       {/* falling stitch-crosses */}
       {Array.from({ length: 18 }).map((_, i) => (
@@ -62,7 +62,7 @@ export function OrderSuccess() {
             transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
           />
         </svg>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }} className="mt-6 font-hindi text-xl text-sand-deep">
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }} className="mt-4 sm:mt-6 font-hindi text-xl text-sand-deep">
           धन्यवाद
         </motion.p>
         <motion.h1
@@ -75,14 +75,14 @@ export function OrderSuccess() {
         </motion.h1>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.6, duration: 0.8 }}>
           {o ? (
-            <p className="lede mt-5 text-muted">
+            <p className="lede mt-3 sm:mt-5 text-muted">
               Order <b className="text-indigo">{o.number}</b> · {inr(o.total)} has been placed. Send it to us on WhatsApp so we can confirm it with you right
               away.
             </p>
           ) : (
-            <p className="lede mt-5 text-muted">Your order has been placed. We&apos;ll be in touch on WhatsApp shortly.</p>
+            <p className="lede mt-3 sm:mt-5 text-muted">Your order has been placed. We&apos;ll be in touch on WhatsApp shortly.</p>
           )}
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <div className="mt-5 sm:mt-8 flex flex-wrap justify-center gap-3">
             {o?.waUrl && (
               <motion.a
                 href={o.waUrl}
@@ -99,7 +99,7 @@ export function OrderSuccess() {
               Continue shopping
             </Button>
           </div>
-          <p className="mt-8 text-sm text-muted">Delivery in 6–8 working days via DTDC. Every quilt is handmade, and yours is on its way.</p>
+          <p className="mt-5 sm:mt-8 text-sm text-muted">Delivery in 6–8 working days via DTDC. Every quilt is handmade, and yours is on its way.</p>
         </motion.div>
       </div>
     </div>

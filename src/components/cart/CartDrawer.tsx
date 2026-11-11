@@ -82,9 +82,9 @@ export function CartDrawer({ freeShippingAbove }: { freeShippingAbove: number })
                   <div className="h-40 w-52 opacity-80">
                     <QuiltArt color="#DCCBAE" tag={false} />
                   </div>
-                  <p className="display-sm mt-4">Your cart is resting.</p>
+                  <p className="display-sm mt-3 sm:mt-4">Your cart is resting.</p>
                   <p className="mt-2 text-muted">A light, handmade quilt is a click away.</p>
-                  <div className="mt-6">
+                  <div className="mt-4 sm:mt-6">
                     <Button href="/shop" onClick={() => setOpen(false)}>
                       Browse quilts
                     </Button>
@@ -155,7 +155,7 @@ export function CartDrawer({ freeShippingAbove }: { freeShippingAbove: number })
                   <span className="display-sm tabular-nums">{inr(subtotal)}</span>
                 </div>
                 <p className="mt-1 text-xs text-muted">No login needed · Cash on delivery available · Order confirmed on WhatsApp</p>
-                <div className="mt-4">
+                <div className="mt-3 sm:mt-4">
                   <Button href="/checkout" onClick={() => setOpen(false)} size="lg" variant="accent" className="w-full" magnetic={false}>
                     Checkout →
                   </Button>

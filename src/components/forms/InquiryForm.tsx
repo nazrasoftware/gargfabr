@@ -51,9 +51,9 @@ export function InquiryForm({ type }: { type: "bulk" | "contact" }) {
               <motion.circle cx="60" cy="60" r="52" fill="none" stroke="#C9B28F" strokeWidth="2" strokeDasharray="6 6" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1 }} />
               <motion.path d="M38 62 L54 77 L84 45" fill="none" stroke="#B5523B" strokeWidth="5" strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8, duration: 0.5 }} />
             </svg>
-            <p className="display-sm mt-6">Thank you, we&apos;ve got your message.</p>
+            <p className="display-sm mt-4 sm:mt-6">Thank you, we&apos;ve got your message.</p>
             <p className="mt-3 text-cotton/70">If WhatsApp didn&apos;t open, tap below to send it to us directly.</p>
-            <a href={done} target="_blank" rel="noopener" className="mt-8 inline-flex h-14 items-center gap-2 rounded-full bg-[#1f8f4e] px-7 font-medium text-white">
+            <a href={done} target="_blank" rel="noopener" className="mt-5 sm:mt-8 inline-flex h-14 items-center gap-2 rounded-full bg-[#1f8f4e] px-7 font-medium text-white">
               <WhatsAppIcon /> Open WhatsApp
             </a>
           </motion.div>
@@ -70,7 +70,7 @@ export function InquiryForm({ type }: { type: "bulk" | "contact" }) {
             {type === "bulk" && (
               <>
                 <fieldset>
-                  <legend className="mb-3 mt-4 text-sm font-medium">What are you looking for?</legend>
+                  <legend className="mb-3 mt-3 sm:mt-4 text-sm font-medium">What are you looking for?</legend>
                   <div className="flex flex-wrap gap-2">
                     {PRODUCTS.map((p) => {
                       const on = picked.includes(p);

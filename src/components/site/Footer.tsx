@@ -39,28 +39,28 @@ export function Footer({ settings }: { settings: Settings }) {
     <footer className="relative overflow-hidden bg-indigo-deep text-cotton">
       <div className="quilt-grid pointer-events-none absolute inset-0 opacity-[0.35] invert" />
       <div className="relative mx-auto max-w-[1440px] px-4 pt-20 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
+        <div className="grid gap-7 sm:gap-12 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <Logo light />
-            <p className="mt-6 max-w-sm text-cotton/70">
+            <p className="mt-4 sm:mt-6 max-w-sm text-cotton/70">
               Light, breathable quilts filled with pure cotton, stitched by hand by more than 500 women from the villages around Jaipur.
             </p>
             <a
               href={waLink(settings.whatsapp, "Hello Garg Fabrication! I'd like to know more about your quilts.")}
               target="_blank"
               rel="noopener"
-              className="group mt-8 inline-flex items-center gap-3 rounded-full bg-cotton px-5 py-3 text-indigo transition hover:bg-white"
+              className="group mt-5 sm:mt-8 inline-flex items-center gap-3 rounded-full bg-cotton px-5 py-3 text-indigo transition hover:bg-white"
             >
               <WhatsAppIcon />
               <span className="font-medium">Chat on WhatsApp</span>
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-6 sm:gap-10 sm:grid-cols-3">
             {cols.map((c) => (
               <div key={c.title}>
                 <p className="eyebrow text-sand">{c.title}</p>
-                <ul className="mt-5 space-y-3">
+                <ul className="mt-3 sm:mt-5 space-y-3">
                   {c.links.map((l) => (
                     <li key={l.href}>
                       <Link href={l.href} className="group relative inline-block text-cotton/80 transition hover:text-cotton">
@@ -74,7 +74,7 @@ export function Footer({ settings }: { settings: Settings }) {
             ))}
             <div className="col-span-2 sm:col-span-3">
               <p className="eyebrow text-sand">Reach us</p>
-              <p className="mt-4 text-cotton/80">
+              <p className="mt-3 sm:mt-4 text-cotton/80">
                 {settings.address}
                 <br />
                 {settings.phone} · {settings.email}

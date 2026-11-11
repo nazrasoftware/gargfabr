@@ -42,8 +42,8 @@ export default async function PoliciesPage() {
     },
   ];
   return (
-    <div className="bg-cotton pb-16">
-      <div className="mx-auto grid max-w-[1200px] gap-9 px-4 pt-36 sm:px-8 sm:pt-44 lg:grid-cols-[240px_1fr]">
+    <div className="bg-cotton pb-9 sm:pb-16">
+      <div className="mx-auto grid max-w-[1200px] gap-6 sm:gap-9 px-4 pt-28 sm:px-8 sm:pt-44 lg:grid-cols-[240px_1fr]">
         <nav className="hidden lg:sticky lg:top-28 lg:block lg:self-start">
           <ul className="space-y-3">
             {sections.map((x) => (
@@ -58,11 +58,11 @@ export default async function PoliciesPage() {
         <div>
           <h1 className="display-lg">Policies</h1>
           {sections.map((x) => (
-            <section key={x.id} id={x.id} className="scroll-mt-28 pt-10">
+            <section key={x.id} id={x.id} className="scroll-mt-28 pt-6 sm:pt-10">
               <h2 className="display-sm">{x.t}</h2>
-              <div className="stitch-x mt-4 w-24 text-madder" />
+              <div className="stitch-x mt-3 sm:mt-4 w-24 text-madder" />
               {x.b.map((p) => (
-                <p key={p} className="mt-4 max-w-2xl leading-relaxed text-muted">
+                <p key={p} className="mt-3 sm:mt-4 max-w-2xl leading-relaxed text-muted">
                   {p}
                 </p>
               ))}

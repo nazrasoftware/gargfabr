@@ -87,8 +87,8 @@ export function ProductView({
 
   return (
     <div className="bg-cotton">
-      <div className="mx-auto max-w-[1440px] px-4 pb-24 pt-28 sm:px-8 lg:pt-32">
-        <nav className="mb-6 text-sm text-muted" aria-label="Breadcrumb">
+      <div className="mx-auto max-w-[1440px] px-4 pb-11 sm:pb-24 pt-28 sm:px-8 lg:pt-32">
+        <nav className="mb-4 sm:mb-6 text-sm text-muted" aria-label="Breadcrumb">
           <Link href="/shop" className="hover:text-madder">
             Shop
           </Link>{" "}
@@ -99,7 +99,7 @@ export function ProductView({
           / <span className="text-indigo">{product.name}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
           {/* ───── gallery ───── */}
           <div className="w-full lg:sticky lg:top-24 lg:w-[min(100%,max(24rem,calc(100svh-15rem)))] lg:self-start lg:justify-self-center">
             <div className="relative aspect-square overflow-hidden rounded-[36px] bg-raw" data-cursor={slides.length > 1 ? "Drag" : undefined}>
@@ -128,7 +128,7 @@ export function ProductView({
               </span>
             </div>
             {slides.length > 1 && (
-              <div ref={thumbsRef} className="-mx-1 mt-4 flex gap-3 overflow-x-auto scroll-smooth px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              <div ref={thumbsRef} className="-mx-1 mt-3 sm:mt-4 flex gap-3 overflow-x-auto scroll-smooth px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {slides.map((s, i) => (
                   <button
                     key={s.key}
@@ -155,13 +155,13 @@ export function ProductView({
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="display-lg mt-4 text-[clamp(2.4rem,4.6vw,4.6rem)]"
+              className="display-lg mt-3 sm:mt-4 text-[clamp(2.4rem,4.6vw,4.6rem)]"
             >
               {product.name}
             </motion.h1>
-            <p className="lede mt-4 text-muted">{product.tagline}</p>
+            <p className="lede mt-3 sm:mt-4 text-muted">{product.tagline}</p>
 
-            <div className="mt-6 flex items-baseline gap-3">
+            <div className="mt-4 sm:mt-6 flex items-baseline gap-3">
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={(size?.price ?? 0) * qty}
@@ -177,10 +177,10 @@ export function ProductView({
               <span className="text-sm text-muted">incl. taxes</span>
             </div>
 
-            <div className="stitch-x mt-8 w-full text-indigo/25" />
+            <div className="stitch-x mt-5 sm:mt-8 w-full text-indigo/25" />
 
             {/* colour */}
-            <div className="mt-8">
+            <div className="mt-5 sm:mt-8">
               <p className="flex justify-between text-sm">
                 <span className="font-medium">Colour</span>
                 <span className="text-muted">{color?.name}</span>
@@ -209,7 +209,7 @@ export function ProductView({
             </div>
 
             {/* size */}
-            <div className="mt-8">
+            <div className="mt-5 sm:mt-8">
               <p className="flex justify-between text-sm">
                 <span className="font-medium">Size</span>
                 {!isPillow && (
@@ -244,7 +244,7 @@ export function ProductView({
             </div>
 
             {/* qty + CTA */}
-            <div ref={ctaRef} className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div ref={ctaRef} className="mt-5 sm:mt-8 flex flex-col gap-3 sm:flex-row">
               <div className="flex h-14 items-center justify-between rounded-full px-2 ring-1 ring-indigo/15 sm:w-36">
                 <button className="grid h-10 w-10 place-items-center rounded-full hover:bg-raw" onClick={() => setQty((q) => Math.max(1, q - 1))} aria-label="Decrease quantity">
                   <Minus size={16} />
@@ -283,7 +283,7 @@ export function ProductView({
               <WhatsAppIcon /> Order directly on WhatsApp
             </a>
 
-            <ul className="mt-8 grid grid-cols-3 gap-3 text-center text-xs text-muted">
+            <ul className="mt-5 sm:mt-8 grid grid-cols-3 gap-3 text-center text-xs text-muted">
               {[
                 [HandHeart, "Handmade by women artisans"],
                 [Banknote, "Cash on delivery"],
@@ -300,7 +300,7 @@ export function ProductView({
             </ul>
 
             <Accordion
-              className="mt-10"
+              className="mt-6 sm:mt-10"
               defaultOpen={0}
               items={[
                 {
@@ -348,8 +348,8 @@ export function ProductView({
         <div className="relative max-w-xl px-6 py-20 sm:px-12 sm:py-28">
           <p className="font-hindi text-xl text-sand">हाथ से बना</p>
           <p className="display-md mt-3">Made by hands like these.</p>
-          <p className="mt-4 text-cotton/75">Every piece is stitched by one of more than 500 women artisans in Rajasthan.</p>
-          <div className="mt-8">
+          <p className="mt-3 sm:mt-4 text-cotton/75">Every piece is stitched by one of more than 500 women artisans in Rajasthan.</p>
+          <div className="mt-5 sm:mt-8">
             <Button href="/story" variant="light">
               Meet the makers →
             </Button>
@@ -362,7 +362,7 @@ export function ProductView({
           <Reveal>
             <h2 className="display-md">You may also like</h2>
           </Reveal>
-          <div className="mt-12 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-7 sm:mt-12 grid gap-x-6 gap-y-8 sm:gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} />
             ))}

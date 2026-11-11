@@ -12,24 +12,24 @@ export const metadata: Metadata = {
 export default function BulkPage() {
   return (
     <div className="bg-cotton">
-      <section className="relative overflow-hidden pt-32 sm:pt-40">
-        <div className="mx-auto grid max-w-[1440px] gap-10 px-4 pb-14 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
+      <section className="relative overflow-hidden pt-28 sm:pt-40">
+        <div className="mx-auto grid max-w-[1440px] gap-6 px-4 pb-8 sm:pb-14 sm:px-8 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <Reveal>
               <p className="eyebrow text-madder">
                 Bulk & gifting <span className="font-hindi normal-case tracking-normal text-sand-deep">· थोक ऑर्डर</span>
               </p>
             </Reveal>
-            <SplitWords as="h1" text="Handmade, at scale." className="display-xl mt-5 block max-w-[10ch] text-[clamp(3rem,7vw,7rem)]" italicWords={["scale"]} trigger="mount" />
+            <SplitWords as="h1" text="Handmade, at scale." className="display-xl mt-3 sm:mt-5 block text-[clamp(3rem,7vw,7rem)]" italicWords={["scale"]} trigger="mount" />
             <Reveal delay={0.3}>
-              <p className="lede mt-6 max-w-md text-muted">
+              <p className="lede mt-4 sm:mt-6 max-w-md text-muted">
                 With a network of 500+ women artisans, we take on larger orders for hospitality, events and gifting. The same care goes into every piece.
               </p>
             </Reveal>
-            <div className="arch relative mt-10 hidden aspect-[4/5] w-full max-w-sm overflow-hidden lg:block">
+            <div className="arch relative mt-6 sm:mt-10 hidden aspect-[4/5] w-full max-w-sm overflow-hidden lg:block">
               <VideoLoop name="spread" />
             </div>
-            <ul className="mt-10 grid grid-cols-2 gap-3 text-sm lg:max-w-md">
+            <ul className="mt-6 sm:mt-10 grid grid-cols-2 gap-3 text-sm lg:max-w-md">
               {["Hotels & homestays", "Weddings & events", "Corporate gifting", "Hostels & institutions"].map((t, i) => (
                 <Reveal key={t} delay={0.1 * i} as="li">
                   <span className="flex items-center gap-2 rounded-2xl bg-raw px-4 py-3">
@@ -43,7 +43,7 @@ export default function BulkPage() {
           <Reveal delay={0.2}>
             <div className="rounded-[36px] bg-cotton-2 p-6 ring-1 ring-indigo/10 sm:p-10">
               <h2 className="display-sm">Tell us what you need</h2>
-              <p className="mb-8 mt-2 text-muted">We usually reply on WhatsApp within a working day.</p>
+              <p className="mb-5 sm:mb-8 mt-2 text-muted">We usually reply on WhatsApp within a working day.</p>
               <InquiryForm type="bulk" />
             </div>
           </Reveal>

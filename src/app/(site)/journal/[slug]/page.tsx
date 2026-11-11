@@ -47,32 +47,32 @@ async function Post({ params }: { params: PageProps<"/journal/[slug]">["params"]
   const next = all.find((p) => p.id !== post.id);
 
   return (
-    <article className="bg-cotton pb-16">
+    <article className="bg-cotton pb-9 sm:pb-16">
       <ReadingProgress />
-      <header className="mx-auto max-w-[900px] px-4 pt-36 text-center sm:px-8 sm:pt-44">
+      <header className="mx-auto max-w-[900px] px-4 pt-28 text-center sm:px-8 sm:pt-44">
         <Link href="/journal" className="eyebrow text-madder">
           ← Journal
         </Link>
         <Reveal>
-          <h1 className="display-lg mt-6">{post.title}</h1>
-          <p className="mt-5 text-sm uppercase tracking-[0.16em] text-muted">{fmtDate(post.publishedAt)}</p>
+          <h1 className="display-lg mt-4 sm:mt-6">{post.title}</h1>
+          <p className="mt-3 sm:mt-5 text-sm uppercase tracking-[0.16em] text-muted">{fmtDate(post.publishedAt)}</p>
         </Reveal>
       </header>
       {post.cover && (
-        <Reveal className="mx-auto mt-10 max-w-[1200px] px-4 sm:px-8">
+        <Reveal className="mx-auto mt-6 sm:mt-10 max-w-[1200px] px-4 sm:px-8">
           <div className="relative aspect-[16/9] overflow-hidden rounded-[36px] bg-raw">
             <Image src={post.cover} alt="" fill sizes="100vw" className="object-cover" priority />
           </div>
         </Reveal>
       )}
-      <div className="prose-gf mx-auto mt-10 max-w-[680px] px-4 sm:px-0">
+      <div className="prose-gf mx-auto mt-6 sm:mt-10 max-w-[680px] px-4 sm:px-0">
         <p className="!text-[1.35rem] !leading-relaxed !text-indigo">{post.excerpt}</p>
         {renderBody(post.body)}
       </div>
       {next && (
-        <div className="mx-auto mt-10 max-w-[900px] px-4 sm:px-8">
+        <div className="mx-auto mt-6 sm:mt-10 max-w-[900px] px-4 sm:px-8">
           <div className="stitch-x w-full text-indigo/25" />
-          <Link href={`/journal/${next.slug}`} className="group mt-10 block text-center">
+          <Link href={`/journal/${next.slug}`} className="group mt-6 sm:mt-10 block text-center">
             <p className="eyebrow text-muted">Next story</p>
             <p className="display-md mt-3 transition-colors group-hover:text-madder">{next.title} →</p>
           </Link>

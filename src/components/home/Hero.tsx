@@ -65,7 +65,7 @@ export function Hero() {
   const cueOpacity = useTransform(p, [0, 0.08], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-[230vh] bg-cotton" aria-label="Introduction">
+    <section ref={ref} className="relative h-[165vh] bg-cotton lg:h-[230vh]" aria-label="Introduction">
       <div className="sticky top-0 h-svh overflow-hidden">
         <div className="quilt-grid pointer-events-none absolute inset-0 opacity-70" />
 
@@ -84,7 +84,7 @@ export function Hero() {
             Jaipur · Rajasthan <span className="font-hindi normal-case tracking-normal text-sand-deep">· जयपुर</span>
           </motion.p>
           {ready && (
-            <h1 className="display-xl mt-4 text-[clamp(2.55rem,11.2vw,4.6rem)] text-indigo lg:mt-7 lg:max-w-[48vw] lg:text-[min(9.4vw,15.5vh)]">
+            <h1 className="display-xl mt-3 text-[clamp(2.55rem,11.2vw,4.6rem)] text-indigo lg:mt-7 lg:max-w-[48vw] lg:text-[min(9.4vw,15.5vh)]">
               <SplitWords text="Light as cotton." trigger="mount" className="block" stagger={0.07} />
               <SplitWords
                 text="Made by her."
@@ -99,7 +99,7 @@ export function Hero() {
           )}
           {!ready && <h1 className="display-xl mt-7 opacity-0">Light as cotton. Made by her.</h1>}
           <motion.p
-            className="lede mt-4 hidden max-w-[30rem] text-[0.98rem] text-muted [@media(min-height:780px)]:block lg:mt-8 lg:block lg:text-[clamp(1.05rem,1.25vw,1.25rem)]"
+            className="lede mt-3 hidden max-w-[30rem] text-[0.98rem] text-muted [@media(min-height:780px)]:block lg:mt-8 lg:block lg:text-[clamp(1.05rem,1.25vw,1.25rem)]"
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : undefined}
             transition={{ delay: 0.7, duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -107,7 +107,7 @@ export function Hero() {
             Breathable Jaipuri quilts with pure cotton filling, hand-stitched by more than 500 women from the villages around Jaipur.
           </motion.p>
           <motion.div
-            className="mt-10 hidden flex-wrap gap-3 lg:flex"
+            className="mt-6 sm:mt-10 hidden flex-wrap gap-3 lg:flex"
             initial={{ opacity: 0, y: 20 }}
             animate={ready ? { opacity: 1, y: 0 } : undefined}
             transition={{ delay: 0.85, duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -132,7 +132,7 @@ export function Hero() {
             className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-cotton"
           >
             <p className="font-hindi text-xl text-sand sm:text-2xl">हर रज़ाई की एक कहानी है</p>
-            <p className="display-lg mt-4 max-w-[16ch]">
+            <p className="display-lg mt-3 sm:mt-4">
               Every quilt holds a woman&apos;s <span className="italic">skill</span>, patience and story.
             </p>
           </motion.div>

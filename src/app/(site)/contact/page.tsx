@@ -16,18 +16,18 @@ export default async function ContactPage() {
   ];
   return (
     <div className="bg-cotton">
-      <section className="mx-auto grid max-w-[1440px] gap-10 px-4 pb-16 pt-32 sm:px-8 sm:pt-40 lg:grid-cols-[1fr_1fr] lg:gap-20">
+      <section className="mx-auto grid max-w-[1440px] gap-6 px-4 pb-9 sm:pb-16 pt-28 sm:px-8 sm:pt-40 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div>
           <Reveal>
             <p className="eyebrow text-madder">
               Contact <span className="font-hindi normal-case tracking-normal text-sand-deep">· संपर्क</span>
             </p>
           </Reveal>
-          <SplitWords as="h1" text="Say namaste." className="display-xl mt-5 block text-[clamp(3rem,8vw,8rem)]" italicWords={["namaste"]} trigger="mount" />
+          <SplitWords as="h1" text="Say namaste." className="display-xl mt-3 sm:mt-5 block text-[clamp(3rem,8vw,8rem)]" italicWords={["namaste"]} trigger="mount" />
           <Reveal delay={0.3}>
-            <p className="lede mt-6 max-w-md text-muted">Questions about sizes, colours, delivery or an order? We&apos;re happiest on WhatsApp.</p>
+            <p className="lede mt-4 sm:mt-6 max-w-md text-muted">Questions about sizes, colours, delivery or an order? We&apos;re happiest on WhatsApp.</p>
           </Reveal>
-          <div className="mt-10 space-y-3">
+          <div className="mt-6 sm:mt-10 space-y-3">
             {cards.map((c, i) => (
               <Reveal key={c.k} delay={0.1 * i}>
                 {c.href ? (
@@ -51,7 +51,7 @@ export default async function ContactPage() {
         <Reveal delay={0.2}>
           <div className="rounded-[36px] bg-cotton-2 p-6 ring-1 ring-indigo/10 sm:p-10">
             <h2 className="display-sm">Send us a message</h2>
-            <p className="mb-8 mt-2 text-muted">It opens in WhatsApp, ready to send.</p>
+            <p className="mb-5 sm:mb-8 mt-2 text-muted">It opens in WhatsApp, ready to send.</p>
             <InquiryForm type="contact" />
           </div>
         </Reveal>

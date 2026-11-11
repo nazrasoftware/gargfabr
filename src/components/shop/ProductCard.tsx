@@ -73,7 +73,7 @@ export function ProductCard({ product, index = 0, large = false }: { product: Pr
         </div>
       </Link>
 
-      <div className="mt-5 flex items-start justify-between gap-4 px-1">
+      <div className="mt-3 sm:mt-5 flex items-start justify-between gap-4 px-1">
         <div>
           <h3 className="display-sm text-[1.45rem]">
             <Link href={`/shop/${product.slug}`}>{product.name}</Link>

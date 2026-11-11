@@ -37,7 +37,7 @@ export function ShopGrid({ products }: { products: Product[] }) {
         </div>
       </div>
 
-      <motion.div layout className="mt-10 grid gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div layout className="mt-6 sm:mt-10 grid gap-x-6 gap-y-8 sm:gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
           {list.map((p, i) => (
             <motion.div
@@ -53,7 +53,7 @@ export function ShopGrid({ products }: { products: Product[] }) {
           ))}
         </AnimatePresence>
       </motion.div>
-      {list.length === 0 && <p className="mt-16 text-center text-muted">No products here yet.</p>}
+      {list.length === 0 && <p className="mt-8 sm:mt-16 text-center text-muted">No products here yet.</p>}
     </div>
   );
 }

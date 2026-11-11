@@ -46,7 +46,7 @@ export function Anatomy() {
   const rot = useTransform(p, [0, 1], [-4, 4]);
 
   return (
-    <section ref={ref} className="relative h-[340vh] bg-raw grain" aria-label="Anatomy of a quilt">
+    <section ref={ref} className="relative h-[210vh] bg-raw grain lg:h-[340vh]" aria-label="Anatomy of a quilt">
       <div className="sticky top-0 flex h-svh items-center overflow-hidden">
         <div className="mx-auto grid w-full max-w-[1440px] items-center gap-6 px-4 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* copy */}
@@ -54,10 +54,10 @@ export function Anatomy() {
             <p className="eyebrow text-madder">
               Anatomy of a quilt <span className="font-hindi normal-case tracking-normal text-sand-deep">· परतें</span>
             </p>
-            <h2 className="display-md mt-4 max-w-[13ch] text-[clamp(1.9rem,4.2vw,4.25rem)]">
+            <h2 className="display-md mt-3 sm:mt-4 text-[clamp(1.9rem,4.2vw,4.25rem)]">
               Three layers, <span className="italic">one</span> breath of warmth.
             </h2>
-            <ol className="mt-6 hidden space-y-1 lg:mt-10 lg:block">
+            <ol className="mt-4 hidden space-y-1 lg:mt-10 lg:block">
               {STEPS.map((s, i) => (
                 <li key={s.k} className="relative">
                   <div className={clsx("flex gap-5 py-3 transition-opacity duration-500", i === step ? "opacity-100" : "opacity-30")}>
@@ -77,7 +77,7 @@ export function Anatomy() {
               ))}
             </ol>
             {/* mobile: single active step */}
-            <div className="mt-5 min-h-[6.5rem] lg:hidden">
+            <div className="mt-3 sm:mt-5 min-h-[6.5rem] lg:hidden">
               <motion.div key={step} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
                 <p className="font-serif text-sm text-madder">
                   {STEPS[step].k} / 04

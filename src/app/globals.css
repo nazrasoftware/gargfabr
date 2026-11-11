@@ -212,3 +212,27 @@ html.has-cursor * {
   margin: 1.6em 0;
   font-style: italic;
 }
+
+/* ───────── Compact type on phones: tighter line-height everywhere, less vertical space ───────── */
+@media (max-width: 639px) {
+  :root {
+    --text-xs--line-height: 1.3;
+    --text-sm--line-height: 1.35;
+    --text-base--line-height: 1.4;
+    --text-lg--line-height: 1.3;
+    --text-xl--line-height: 1.25;
+    --text-2xl--line-height: 1.2;
+    --leading-relaxed: 1.4;
+    --leading-snug: 1.3;
+  }
+  body {
+    line-height: 1.4;
+  }
+  .lede {
+    font-size: 1rem;
+    line-height: 1.42;
+  }
+  .prose-gf p {
+    line-height: 1.5;
+  }
+}

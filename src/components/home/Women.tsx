@@ -26,7 +26,7 @@ export function Women() {
   const bigX = useTransform(scrollYProgress, [0, 1], ["8%", "-18%"]);
 
   return (
-    <section id="women" ref={ref} className="relative overflow-hidden bg-indigo-deep py-16 text-cotton lg:py-40" aria-label="Our women">
+    <section id="women" ref={ref} className="relative overflow-hidden bg-indigo-deep py-9 text-cotton lg:py-40" aria-label="Our women">
       <div className="quilt-grid pointer-events-none absolute inset-0 opacity-30 invert" />
 
       {/* drifting Hindi watermark */}
@@ -45,34 +45,34 @@ export function Women() {
           </p>
         </Reveal>
 
-        <div className="mt-8 grid items-end gap-8 lg:grid-cols-[auto_1fr] lg:gap-16">
+        <div className="mt-5 sm:mt-8 grid items-end gap-5 lg:grid-cols-[auto_1fr] lg:gap-16">
           <Counter to={500} />
           <div className="pb-4">
             <SplitWords
               as="h2"
               text="women, one stitch at a time."
-              className="display-md block max-w-[15ch]"
+              className="display-md block"
               italicWords={["stitch"]}
             />
-            <StitchDraw className="mt-5 h-3 w-64 text-madder" />
+            <StitchDraw className="mt-3 sm:mt-5 h-3 w-64 text-madder" />
           </div>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:mt-28 lg:grid-cols-12 lg:gap-8">
+        <div className="mt-6 grid grid-cols-2 gap-3 lg:mt-28 lg:grid-cols-12 lg:gap-8">
           <motion.div style={{ y: y1 }} className="lg:col-span-4">
             <Portrait a={ARTISANS[0]} onOpen={() => setOpen(ARTISANS[0].video)} />
           </motion.div>
 
-          <div className="flex flex-col justify-center lg:col-span-4 lg:px-4">
+          <div className="order-first col-span-2 flex flex-col justify-center lg:order-none lg:col-span-4 lg:px-4">
             <Reveal>
               <svg viewBox="0 0 40 30" className="h-8 w-10 text-madder" aria-hidden>
                 <path d="M0 30V18C0 8 6 2 16 0l2 4c-6 2-9 6-9 12h7v14zm22 0V18c0-10 6-16 16-18l2 4c-6 2-9 6-9 12h7v14z" fill="currentColor" />
               </svg>
-              <p className="display-sm mt-6 text-[clamp(1.5rem,2.2vw,2.1rem)] leading-snug">
+              <p className="display-sm mt-4 sm:mt-6 text-[1.15rem] leading-snug sm:text-[clamp(1.5rem,2.2vw,2.1rem)]">
                 For us, every quilt represents more than craftsmanship. It represents a woman&apos;s skill, dedication, and contribution to her
                 family&apos;s future.
               </p>
-              <p className="mt-6 text-sm text-cotton/60">Garg Fabrication</p>
+              <p className="mt-4 sm:mt-6 text-sm text-cotton/60">Garg Fabrication</p>
             </Reveal>
           </div>
 
@@ -82,10 +82,10 @@ export function Women() {
         </div>
 
         {/* leadership + pillars */}
-        <div className="mt-10 grid gap-9 border-t border-dashed border-cotton/20 pt-10 lg:mt-40 lg:grid-cols-[1fr_1.2fr]">
+        <div className="mt-6 grid gap-6 sm:gap-9 border-t border-dashed border-cotton/20 pt-6 sm:pt-10 lg:mt-40 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
             <p className="eyebrow text-sand">Led by</p>
-            <p className="display-md mt-4">Babita Gupta</p>
+            <p className="display-md mt-3 sm:mt-4">Babita Gupta</p>
             <p className="mt-2 text-cotton/60">Co-Founder & Operations Head · from Ringas, Rajasthan</p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -93,7 +93,7 @@ export function Women() {
               What began with a small team has grown into a network of over 500 rural women associated with us on a contract basis. Our women-centric
               model lets women from surrounding villages earn through their skills while continuing to manage their homes.
             </p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="mt-6 sm:mt-10 grid gap-4 sm:grid-cols-3">
               {[
                 ["Meaningful work", "Paid for skill, close to home."],
                 ["Skill development", "Craft passed on and sharpened."],
@@ -154,7 +154,7 @@ function Portrait({ a, onOpen }: { a: (typeof ARTISANS)[number]; onOpen: () => v
           </svg>
         </span>
       </div>
-      <p className="mt-4 flex items-center gap-2 text-sm text-cotton/70">
+      <p className="mt-3 sm:mt-4 flex items-center gap-2 text-sm text-cotton/70">
         <span className="font-hindi text-sand">{a.hi}</span> · {a.place}
       </p>
     </button>

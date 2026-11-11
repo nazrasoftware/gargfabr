@@ -5,7 +5,7 @@ import { Reveal, SplitWords } from "@/components/motion/Reveal";
 
 export function Collections({ products }: { products: Product[] }) {
   return (
-    <section className="relative bg-cotton py-16 lg:py-40" aria-label="Collections">
+    <section className="relative bg-cotton py-9 lg:py-40" aria-label="Collections">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -14,7 +14,7 @@ export function Collections({ products }: { products: Product[] }) {
                 The collection <span className="font-hindi normal-case tracking-normal text-sand-deep">· संग्रह</span>
               </p>
             </Reveal>
-            <SplitWords as="h2" text="Choose your quilt." className="display-lg mt-5 block" italicWords={["quilt"]} />
+            <SplitWords as="h2" text="Choose your quilt." className="display-lg mt-3 sm:mt-5 block" italicWords={["quilt"]} />
           </div>
           <Reveal delay={0.15} className="flex flex-col items-start gap-4 lg:items-end lg:pb-3">
             <p className="max-w-sm text-muted lg:text-right">
@@ -27,9 +27,9 @@ export function Collections({ products }: { products: Product[] }) {
           </Reveal>
         </div>
 
-        <div className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+        <div className="mt-5 -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:gap-x-6 sm:gap-y-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
           {products.slice(0, 3).map((p, i) => (
-            <div key={p.id} className={i === 1 ? "lg:translate-y-16" : undefined}>
+            <div key={p.id} className={"w-[74%] shrink-0 snap-start sm:w-auto " + (i === 1 ? "lg:translate-y-16" : "")}>
               <ProductCard product={p} index={i} />
             </div>
           ))}

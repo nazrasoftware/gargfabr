@@ -14,7 +14,7 @@ export default function StoryPage() {
   return (
     <>
       <StoryHero />
-      <section className="bg-cotton py-16 lg:py-40">
+      <section className="bg-cotton py-9 lg:py-40">
         <div className="mx-auto max-w-[1100px] px-4 sm:px-8">
           <ScrubText
             className="display-md text-[clamp(1.75rem,3.4vw,3.4rem)] leading-[1.15]"

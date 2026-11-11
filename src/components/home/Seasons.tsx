@@ -29,28 +29,30 @@ export function Seasons() {
 
   return (
     <motion.section
-      className="relative overflow-hidden py-16 lg:py-36"
+      className="relative overflow-hidden py-9 lg:py-28"
       animate={{ backgroundColor: m.bg }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       aria-label="Comfort through the seasons"
     >
-      <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-4 sm:px-8 lg:grid-cols-2">
-        <div>
+      {/* mobile order: heading + toggle, picture, copy (so the picture changes right under the toggle);
+          laptop: copy on the left, picture on the right */}
+      <div className="mx-auto grid max-w-[1440px] gap-y-3 px-4 sm:px-8 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-0 lg:[grid-template-rows:auto_auto]">
+        <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
           <Reveal>
-            <p className="eyebrow text-madder">
+            <p className="eyebrow whitespace-nowrap text-madder max-[420px]:text-[0.64rem]">
               Comfort through the seasons <span className="font-hindi normal-case tracking-normal text-sand-deep">· हर मौसम</span>
             </p>
           </Reveal>
 
           {/* toggle */}
-          <div className="mt-8 inline-flex rounded-full bg-cotton/70 p-1.5 ring-1 ring-indigo/10 backdrop-blur" role="tablist" aria-label="Season">
+          <div className="mt-3 inline-flex rounded-full bg-cotton/70 p-1 ring-1 ring-indigo/10 backdrop-blur lg:mt-8" role="tablist" aria-label="Season">
             {(Object.keys(MODES) as Mode[]).map((k) => (
               <button
                 key={k}
                 role="tab"
                 aria-selected={mode === k}
                 onClick={() => setMode(k)}
-                className={clsx("relative rounded-full px-5 py-2.5 text-sm font-medium transition-colors", mode === k ? "text-cotton" : "text-indigo")}
+                className={clsx("relative whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors lg:px-5 lg:py-2.5", mode === k ? "text-cotton" : "text-indigo")}
               >
                 {mode === k && (
                   <motion.span layoutId="season-pill" className="absolute inset-0 rounded-full bg-indigo" transition={{ type: "spring", stiffness: 400, damping: 32 }} />
@@ -61,23 +63,30 @@ export function Seasons() {
               </button>
             ))}
           </div>
+        </div>
 
-          <div className="relative mt-10 min-h-[15rem] sm:min-h-[13rem]">
+        {/* celestial illustration: compact on phones so it sits in the same screen as the toggle */}
+        <div className="relative mx-auto aspect-square w-[min(15.5rem,62vw)] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:w-full lg:max-w-[520px] lg:self-center">
+          <SkyArt mode={mode} />
+        </div>
+
+        <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
+          <div className="relative min-h-[7.5rem] lg:mt-8 lg:min-h-[13rem]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={mode}
-                initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+                initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -20, filter: "blur(6px)" }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                exit={{ opacity: 0, y: -12, filter: "blur(6px)" }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <h2 className="display-lg max-w-[14ch] text-[clamp(2.3rem,5vw,5rem)]">{m.title}</h2>
-                <p className="lede mt-6 max-w-md text-indigo-soft">{m.body}</p>
+                <h2 className="display-lg text-[clamp(1.6rem,6.4vw,5rem)]">{m.title}</h2>
+                <p className="lede mt-2 max-w-md text-indigo-soft lg:mt-6">{m.body}</p>
               </motion.div>
             </AnimatePresence>
           </div>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+          <div className="mt-3 grid gap-2 sm:grid-cols-3 lg:mt-8 lg:gap-3">
             {[
               ["Breathable by nature", "Pure cotton filling, not synthetic."],
               ["Lightweight warmth", "Warm without the weight."],
@@ -89,19 +98,14 @@ export function Seasons() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.7 }}
-                className="rounded-3xl bg-cotton/60 p-5 ring-1 ring-indigo/8 backdrop-blur"
+                className="rounded-2xl bg-cotton/60 px-4 py-2.5 ring-1 ring-indigo/8 backdrop-blur lg:rounded-3xl lg:p-5"
               >
-                <p className="font-serif text-lg leading-tight">{t}</p>
-                <p className="mt-1.5 text-sm text-muted">{d}</p>
+                <p className="font-serif text-base leading-tight lg:text-lg">{t}</p>
+                <p className="mt-0.5 text-sm text-muted lg:mt-1.5">{d}</p>
               </motion.div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted">Comfort depends on your climate and the quilt you choose.</p>
-        </div>
-
-        {/* celestial illustration */}
-        <div className="relative mx-auto aspect-square w-full max-w-[560px]">
-          <SkyArt mode={mode} />
+          <p className="mt-2 text-xs text-muted lg:mt-4">Comfort depends on your climate and the quilt you choose.</p>
         </div>
       </div>
     </motion.section>
@@ -111,7 +115,7 @@ export function Seasons() {
 function SkyArt({ mode }: { mode: Mode }) {
   const sun = mode === "summer";
   return (
-    <svg viewBox="0 0 500 500" className="h-full w-full" aria-hidden>
+    <svg viewBox="-30 -30 560 560" className="h-full w-full overflow-visible" aria-hidden>
       {/* orbit */}
       <circle cx="250" cy="250" r="210" fill="none" stroke="#1F2A44" strokeOpacity="0.15" strokeDasharray="4 8" />
       <motion.g animate={{ rotate: sun ? 0 : 180 }} transition={{ duration: 1.4, ease: [0.65, 0, 0.35, 1] }} style={{ transformOrigin: "250px 250px" }}>

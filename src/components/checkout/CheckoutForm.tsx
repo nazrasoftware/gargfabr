@@ -68,9 +68,9 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
           <div className="mx-auto h-44 w-56">
             <QuiltArt color="#DCCBAE" />
           </div>
-          <h1 className="display-md mt-6">Your cart is empty.</h1>
+          <h1 className="display-md mt-4 sm:mt-6">Your cart is empty.</h1>
           <p className="mt-3 text-muted">Pick a quilt you love and come back here to check out.</p>
-          <div className="mt-8">
+          <div className="mt-5 sm:mt-8">
             <Button href="/shop" variant="accent">
               Browse quilts
             </Button>
@@ -82,7 +82,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
 
   return (
     <div className="bg-cotton">
-      <div className="mx-auto max-w-[1280px] px-4 pb-28 pt-28 sm:px-8 lg:pt-36">
+      <div className="mx-auto max-w-[1280px] px-4 pb-12 sm:pb-28 pt-28 sm:px-8 lg:pt-36">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9 }} className="display-lg">
           Checkout
         </motion.h1>
@@ -90,7 +90,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
           <Lock size={15} /> No account needed. We&apos;ll confirm your order on WhatsApp.
         </p>
 
-        <form action={submit} className="mt-12 grid gap-12 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
+        <form action={submit} className="mt-7 sm:mt-12 grid gap-7 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
           <div className="space-y-12">
             <Step n="01" title="Your details">
               <div className="grid gap-4 sm:grid-cols-2">
@@ -154,7 +154,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="rounded-[32px] bg-raw p-6 sm:p-8">
               <h2 className="display-sm">Order summary</h2>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-4 sm:mt-6 space-y-4">
                 {lines.map((l) => (
                   <li key={l.key} className="flex items-center gap-4">
                     <span className="relative grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-cotton">
@@ -183,7 +183,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
                   <dd className="tabular-nums">{shipping ? inr(shipping) : "Free"}</dd>
                 </div>
               </dl>
-              <div className="mt-4 flex items-baseline justify-between">
+              <div className="mt-3 sm:mt-4 flex items-baseline justify-between">
                 <span className="font-medium">Total</span>
                 <span className="display-md tabular-nums">{inr(total)}</span>
               </div>
@@ -194,7 +194,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto", x: [0, -8, 8, -4, 0] }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 rounded-2xl bg-madder/10 px-4 py-3 text-sm text-madder-deep"
+                    className="mt-3 sm:mt-4 rounded-2xl bg-madder/10 px-4 py-3 text-sm text-madder-deep"
                     role="alert"
                   >
                     {error}
@@ -202,7 +202,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
                 )}
               </AnimatePresence>
 
-              <div className="mt-6">
+              <div className="mt-4 sm:mt-6">
                 <Button type="submit" variant="accent" size="lg" className="w-full" magnetic={false} disabled={pending || !mounted}>
                   <span className="flex items-center gap-2">
                     {pending ? (
@@ -236,7 +236,7 @@ export function CheckoutForm({ shippingFee, freeShippingAbove }: { shippingFee: 
 function Step({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
   return (
     <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-      <div className="mb-6 flex items-baseline gap-4">
+      <div className="mb-4 sm:mb-6 flex items-baseline gap-4">
         <span className="font-serif text-madder">{n}</span>
         <h2 className="display-sm">{title}</h2>
       </div>
