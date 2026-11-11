@@ -7,7 +7,7 @@ import clsx from "clsx";
 import { Check, Minus, Plus, Truck, HandHeart, Banknote } from "lucide-react";
 import type { Product } from "@/lib/types";
 import { CATEGORIES } from "@/lib/types";
-import { inr } from "@/lib/format";
+import { imageIndexForColor, inr } from "@/lib/format";
 import { waLink } from "@/lib/whatsapp";
 import { useCart } from "@/components/cart/store";
 import { QuiltArt } from "@/components/ui/QuiltArt";
@@ -67,7 +67,7 @@ export function ProductView({
         sizeLabel: size.label,
         dims: size.dims,
         price: size.price,
-        image: product.images[0],
+        image: product.images[imageIndexForColor(product.images, color?.name)],
       },
       qty,
     );
@@ -185,7 +185,7 @@ export function ProductView({
                     aria-checked={c.name === color?.name}
                     onClick={() => {
                       setColor(c);
-                      setSlide(0);
+                      setSlide(imageIndexForColor(product.images, c.name));
                     }}
                     className="group flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4 ring-1 ring-indigo/15 transition hover:ring-indigo/40"
                   >

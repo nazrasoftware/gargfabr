@@ -6,14 +6,14 @@ import { useState } from "react";
 import clsx from "clsx";
 import type { Product } from "@/lib/types";
 import { CATEGORIES } from "@/lib/types";
-import { inr } from "@/lib/format";
+import { imageForColor, inr } from "@/lib/format";
 import { QuiltArt } from "@/components/ui/QuiltArt";
 
 export function ProductCard({ product, index = 0, large = false }: { product: Product; index?: number; large?: boolean }) {
   const [color, setColor] = useState(product.colors[0]);
   const from = Math.min(...product.sizes.map((s) => s.price));
   const cat = CATEGORIES.find((c) => c.id === product.category);
-  const img = product.images[0];
+  const img = imageForColor(product.images, color?.name);
 
   return (
     <motion.article

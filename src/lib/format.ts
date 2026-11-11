@@ -40,3 +40,16 @@ export function isDark(hex: string) {
     b = n & 255;
   return 0.299 * r + 0.587 * g + 0.114 * b < 140;
 }
+
+/** Photos are named like `cotton-white-hero.webp`; pick the first one matching the colour, else the first photo. */
+export function imageForColor(images: string[], colorName?: string) {
+  if (!colorName) return images[0];
+  const slug = colorName.toLowerCase().split(" ")[0];
+  return images.find((src) => src.includes(`-${slug}-`)) ?? images[0];
+}
+export function imageIndexForColor(images: string[], colorName?: string) {
+  if (!colorName) return 0;
+  const slug = colorName.toLowerCase().split(" ")[0];
+  const i = images.findIndex((src) => src.includes(`-${slug}-`));
+  return i < 0 ? 0 : i;
+}

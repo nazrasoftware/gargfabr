@@ -45,3 +45,4 @@ next-env.d.ts
 
 # raw source material (not part of the site)
 /source-docs
+/img
