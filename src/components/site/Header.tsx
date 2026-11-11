@@ -70,7 +70,7 @@ export function Header({ announcement }: { announcement: string }) {
             scrolled || menu ? "bg-cotton/80 shadow-[0_1px_0_var(--line)] backdrop-blur-xl" : "bg-transparent",
           )}
         >
-          <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-4 sm:h-[72px] sm:px-8">
+          <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-3 px-5 sm:h-[72px] sm:px-8">
             <Link href="/" aria-label="Garg Fabrication home" className="relative z-10">
               <Logo className="[&_.logo-sub]:hidden sm:[&_.logo-sub]:block" />
             </Link>
@@ -103,12 +103,12 @@ export function Header({ announcement }: { announcement: string }) {
               })}
             </nav>
 
-            <div className="relative z-10 flex items-center gap-2">
+            <div className="relative z-10 flex shrink-0 items-center gap-2.5">
               <CartButton />
               <button
                 type="button"
                 onClick={() => setMenu((m) => !m)}
-                className="grid h-11 w-11 place-items-center rounded-full ring-1 ring-indigo/15 lg:hidden"
+                className="grid h-10 w-10 place-items-center rounded-full ring-1 ring-indigo/15 sm:h-11 sm:w-11 lg:hidden"
                 aria-label={menu ? "Close menu" : "Open menu"}
                 aria-expanded={menu}
               >
@@ -148,12 +148,12 @@ function CartButton() {
       onClick={() => setOpen(true)}
       animate={bump ? { scale: [1, 1.18, 0.94, 1], rotate: [0, -8, 6, 0] } : undefined}
       transition={{ duration: 0.6 }}
-      className="relative flex h-11 items-center gap-2 rounded-full bg-indigo pl-4 pr-1.5 text-cotton"
+      className="relative flex h-10 items-center gap-1.5 rounded-full bg-indigo pl-3.5 pr-1.5 text-cotton sm:h-11 sm:gap-2 sm:pl-4"
       aria-label={`Open cart, ${count} items`}
       data-cursor="Cart"
     >
       <span className="text-[0.85rem]">Cart</span>
-      <span className="grid h-8 min-w-8 place-items-center rounded-full bg-cotton px-2 text-[0.8rem] font-semibold tabular-nums text-indigo">
+      <span className="grid h-7 min-w-7 place-items-center rounded-full bg-cotton px-2 sm:h-8 sm:min-w-8 text-[0.8rem] font-semibold tabular-nums text-indigo">
         {count}
       </span>
     </motion.button>
