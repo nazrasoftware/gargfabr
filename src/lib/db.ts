@@ -1,5 +1,6 @@
 import "server-only";
 import { promises as fs } from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import type { Inquiry, Order, Post, Product, Settings } from "./types";
 import { seedInquiries, seedOrders, seedPosts, seedProducts, seedSettings } from "./seed";
@@ -18,7 +19,11 @@ type Collections = {
 };
 type Name = keyof Collections;
 
-const DATA_DIR = path.join(process.cwd(), "data");
+// Vercel's filesystem is read-only except /tmp (ephemeral, per instance), so data
+// there resets on cold starts. Use a real database for production.
+const DATA_DIR = process.env.VERCEL
+  ? path.join(os.tmpdir(), "gf-data")
+  : path.join(/*turbopackIgnore: true*/ process.cwd(), "data");
 export const UPLOAD_DIR = path.join(DATA_DIR, "uploads");
 
 const seeds: Collections = {

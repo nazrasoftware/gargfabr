@@ -62,7 +62,7 @@ async function saveUploads(files: File[]) {
     if (!ext) continue;
     if (f.size > 8 * 1024 * 1024) continue;
     const name = `${crypto.randomUUID()}.${ext}`;
-    await fs.writeFile(path.join(UPLOAD_DIR, name), Buffer.from(await f.arrayBuffer()));
+    await fs.writeFile(path.join(/*turbopackIgnore: true*/ UPLOAD_DIR, name), Buffer.from(await f.arrayBuffer()));
     urls.push(`/uploads/${name}`);
   }
   return urls;
