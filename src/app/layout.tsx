@@ -26,12 +26,12 @@ const tiro = Tiro_Devanagari_Hindi({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gargfabrication.com"),
   title: {
-    default: "Garg Fabrication · Handmade Jaipuri Quilts by 500+ Women Artisans",
+    default: "Garg Fabrication · Handmade Quilts by 500+ Women Artisans",
     template: "%s · Garg Fabrication",
   },
   description:
-    "Light, breathable Jaipuri quilts with pure cotton filling, hand-stitched by more than 500 women artisans from the villages around Jaipur, Rajasthan. Delivered across India.",
-  keywords: ["Jaipuri razai", "handmade cotton quilt", "lightweight quilt", "Jaipur quilt", "hand quilted razai"],
+    "Light, breathable quilts with pure cotton filling, hand-stitched by more than 500 women artisans. Delivered across India.",
+  keywords: ["cotton razai", "handmade cotton quilt", "lightweight quilt", "hand quilted razai"],
   openGraph: {
     type: "website",
     siteName: "Garg Fabrication",

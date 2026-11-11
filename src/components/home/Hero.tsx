@@ -81,7 +81,7 @@ export function Hero() {
             transition={{ delay: 0.1, duration: 1 }}
           >
             <span className="inline-block h-px w-8 bg-madder" />
-            Jaipur · Rajasthan <span className="font-hindi normal-case tracking-normal text-sand-deep">· जयपुर</span>
+            Handmade quilts <span className="font-hindi normal-case tracking-normal text-sand-deep">· हस्तनिर्मित</span>
           </motion.p>
           {ready && (
             <h1 className="display-xl mt-3 text-[clamp(2.55rem,11.2vw,4.6rem)] text-indigo lg:mt-7 lg:max-w-[48vw] lg:text-[min(9.4vw,15.5vh)]">
@@ -104,7 +104,7 @@ export function Hero() {
             animate={ready ? { opacity: 1, y: 0 } : undefined}
             transition={{ delay: 0.7, duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            Breathable Jaipuri quilts with pure cotton filling, hand-stitched by more than 500 women from the villages around Jaipur.
+            Breathable quilts with pure cotton filling, hand-stitched by more than 500 women artisans.
           </motion.p>
           <motion.div
             className="mt-6 sm:mt-10 hidden flex-wrap gap-3 lg:flex"
@@ -191,7 +191,7 @@ export function Hero() {
 }
 
 function Seal() {
-  const text = " 500+ WOMEN ARTISANS ✦ HANDMADE IN JAIPUR ✦";
+  const text = " 500+ WOMEN ARTISANS ✦ HANDMADE WITH CARE ✦";
   return (
     <div className="relative h-[124px] w-[124px] rounded-full bg-madder text-cotton shadow-xl">
       <motion.svg

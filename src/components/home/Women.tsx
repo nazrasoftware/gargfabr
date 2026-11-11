@@ -86,7 +86,7 @@ export function Women() {
           <Reveal>
             <p className="eyebrow text-sand">Led by</p>
             <p className="display-md mt-3 sm:mt-4">Babita Gupta</p>
-            <p className="mt-2 text-cotton/60">Co-Founder & Operations Head · from Ringas, Rajasthan</p>
+            <p className="mt-2 text-cotton/60">Co-Founder & Operations Head</p>
           </Reveal>
           <Reveal delay={0.15}>
             <p className="lede text-cotton/80">

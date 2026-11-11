@@ -43,7 +43,7 @@ export function Footer({ settings }: { settings: Settings }) {
           <div>
             <Logo light />
             <p className="mt-4 sm:mt-6 max-w-sm text-cotton/70">
-              Light, breathable quilts filled with pure cotton, stitched by hand by more than 500 women from the villages around Jaipur.
+              Light, breathable quilts filled with pure cotton, stitched by hand by more than 500 women artisans.
             </p>
             <a
               href={waLink(settings.whatsapp, "Hello Garg Fabrication! I'd like to know more about your quilts.")}
@@ -86,7 +86,7 @@ export function Footer({ settings }: { settings: Settings }) {
         <FooterWordmark />
 
         <div className="flex flex-col gap-3 border-t border-dashed border-cotton/20 py-6 text-xs text-cotton/55 sm:flex-row sm:items-center sm:justify-between sm:pr-24">
-          <p>© {2026} Garg Fabrication · Jaipur, Rajasthan</p>
+          <p>© {2026} Garg Fabrication</p>
           <p>{settings.deliveryText}</p>
           <Link href="/admin" className="hover:text-cotton">
             Admin

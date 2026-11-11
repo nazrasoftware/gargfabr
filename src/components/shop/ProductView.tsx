@@ -348,7 +348,7 @@ export function ProductView({
         <div className="relative max-w-xl px-6 py-20 sm:px-12 sm:py-28">
           <p className="font-hindi text-xl text-sand">हाथ से बना</p>
           <p className="display-md mt-3">Made by hands like these.</p>
-          <p className="mt-3 sm:mt-4 text-cotton/75">Every piece is stitched by one of more than 500 women artisans in Rajasthan.</p>
+          <p className="mt-3 sm:mt-4 text-cotton/75">Every piece is stitched by one of more than 500 women artisans.</p>
           <div className="mt-5 sm:mt-8">
             <Button href="/story" variant="light">
               Meet the makers →

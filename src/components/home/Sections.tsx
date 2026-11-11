@@ -12,7 +12,7 @@ import { VideoLoop } from "@/components/ui/VideoLoop";
 export function TrustMarquee() {
   const items = [
     "500+ women artisans",
-    "Handmade in Rajasthan",
+    "Handmade with care",
     "Pure cotton filling",
     "250 gsm · light as a breath",
     "Delivered in 6–8 days",
@@ -46,7 +46,7 @@ export function Manifesto() {
         <ScrubText
           className="display-md text-[clamp(1.75rem,3.5vw,3.6rem)] leading-[1.12]"
           accent={["hand", "her", "own"]}
-          text="Every Garg quilt is finished by hand — by one woman among more than 500 from the villages around Jaipur, who earns through her craft while still running her home. Because each piece is made with individual care, small variations in stitch give every quilt a character of its own."
+          text="Every Garg quilt is finished by hand — by one woman among more than 500 from nearby villages, who earns through her craft while still running her home. Because each piece is made with individual care, small variations in stitch give every quilt a character of its own."
         />
       </div>
     </section>
@@ -56,8 +56,8 @@ export function Manifesto() {
 /* ───────────── Founders ───────────── */
 export function Founders() {
   const people = [
-    { name: "Sushil Gupta", role: "Founder & Director", from: "Jaipur, Rajasthan", mono: "सु" },
-    { name: "Babita Gupta", role: "Co-Founder & Operations Head", from: "Ringas, Rajasthan", mono: "ब" },
+    { name: "Sushil Gupta", role: "Founder & Director", mono: "सु" },
+    { name: "Babita Gupta", role: "Co-Founder & Operations Head", mono: "ब" },
   ];
   return (
     <section className="relative bg-cotton py-9 lg:py-40" aria-label="Founders">
@@ -69,7 +69,7 @@ export function Founders() {
                 The family behind it <span className="font-hindi normal-case tracking-normal text-sand-deep">· परिवार</span>
               </p>
             </Reveal>
-            <SplitWords as="h2" text="Rooted in Rajasthan." className="display-lg mt-3 sm:mt-5 block" italicWords={["Rajasthan"]} />
+            <SplitWords as="h2" text="Rooted in tradition." className="display-lg mt-3 sm:mt-5 block" italicWords={["tradition"]} />
             <Reveal delay={0.2}>
               <p className="lede mt-5 sm:mt-8 max-w-md text-muted">
                 We take pride in bringing traditional Indian textile craftsmanship into homes, with products that pair timeless techniques with
@@ -92,7 +92,7 @@ export function Founders() {
                   </div>
                   <p className="display-sm mt-3 sm:mt-5">{p.name}</p>
                   <p className="mt-1 text-sm text-muted">
-                    {p.role} · {p.from}
+                    {p.role}
                   </p>
                 </div>
               </Reveal>

@@ -24,7 +24,7 @@ export default async function ShopPage() {
           <SplitWords as="h1" text="Quilts, made by hand." className="display-xl mt-3 sm:mt-5 block" italicWords={["hand"]} trigger="mount" />
           <Reveal delay={0.3}>
             <p className="lede mt-4 sm:mt-6 max-w-lg text-muted">
-              Pure cotton or easy-care polyester. Small, medium or large. Each one stitched by a woman artisan in Rajasthan.
+              Pure cotton or easy-care polyester. Small, medium or large. Each one stitched by a woman artisan.
             </p>
           </Reveal>
         </div>

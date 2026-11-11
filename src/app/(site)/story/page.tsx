@@ -7,7 +7,7 @@ import { ScrubText } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
   title: "Our story",
-  description: "How a small team in Rajasthan grew into a network of 500+ women artisans making handmade Jaipuri quilts.",
+  description: "How a small team grew into a network of 500+ women artisans making handmade quilts.",
 };
 
 export default function StoryPage() {

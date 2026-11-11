@@ -12,7 +12,7 @@ export function Logo({ className, light = false, compact = false }: { className?
         </span>
         {!compact && (
           <span className={clsx("logo-sub mt-1 whitespace-nowrap text-[0.58rem] font-semibold uppercase tracking-[0.26em]", light ? "text-sand" : "text-muted")}>
-            Handmade Jaipuri Quilts
+            Handmade Quilts
           </span>
         )}
       </span>

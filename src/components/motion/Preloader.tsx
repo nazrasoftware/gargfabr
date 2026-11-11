@@ -108,7 +108,7 @@ export function Preloader() {
             </svg>
           </div>
           <div className="absolute bottom-8 left-0 right-0 flex items-end justify-between px-6 sm:px-10">
-            <span className="eyebrow text-sand/80">Handmade Jaipuri Quilts</span>
+            <span className="eyebrow text-sand/80">Handmade Quilts</span>
             <span className="display-sm tabular-nums">{String(n).padStart(3, "0")}</span>
           </div>
         </motion.div>
