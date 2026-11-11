@@ -93,7 +93,7 @@ export function ProductView({
 
         <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
           {/* ───── gallery ───── */}
-          <div className="lg:sticky lg:top-24 lg:self-start">
+          <div className="w-full lg:sticky lg:top-24 lg:w-[min(100%,max(24rem,calc(100svh-15rem)))] lg:self-start lg:justify-self-center">
             <div className="relative aspect-square overflow-hidden rounded-[36px] bg-raw" data-cursor={slides.length > 1 ? "Drag" : undefined}>
               <div className="quilt-grid absolute inset-0 opacity-60" />
               <AnimatePresence mode="popLayout" initial={false}>
