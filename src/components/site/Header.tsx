@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Logo } from "@/components/ui/Logo";
+import { Marquee, StitchStar } from "@/components/ui/Marquee";
 import { cartCount, useCart } from "@/components/cart/store";
 import { useLenis } from "@/components/motion/SmoothScroll";
 
@@ -51,7 +52,16 @@ export function Header({ announcement }: { announcement: string }) {
           animate={{ height: scrolled ? 0 : "auto" }}
           transition={{ duration: 0.4 }}
         >
-          <p className="px-4 py-2 text-center text-[0.72rem] tracking-wide text-cotton/85">{announcement}</p>
+          {/* phones: scrolling ticker; larger screens (and reduced motion): static line */}
+          <div className="sm:hidden motion-reduce:hidden">
+            <Marquee
+              items={announcement.split("·").map((t) => t.trim()).filter(Boolean)}
+              speed={24}
+              separator={<StitchStar className="h-2.5 w-2.5 text-sand" />}
+              className="py-2 text-[0.72rem] tracking-wide text-cotton/85"
+            />
+          </div>
+          <p className="hidden px-4 py-2 text-center text-[0.72rem] tracking-wide text-cotton/85 sm:block motion-reduce:block">{announcement}</p>
         </motion.div>
 
         <div
