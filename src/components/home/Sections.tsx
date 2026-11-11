@@ -33,7 +33,7 @@ export function TrustMarquee() {
 /* ───────────── Manifesto (words light up as you read) ───────────── */
 export function Manifesto() {
   return (
-    <section className="relative bg-cotton py-16 lg:py-44" aria-label="Who we are">
+    <section className="relative bg-cotton py-16 lg:pb-24 lg:pt-44" aria-label="Who we are">
       <div className="mx-auto grid max-w-[1440px] gap-9 px-4 sm:px-8 lg:grid-cols-[1fr_2.4fr]">
         <div className="flex flex-col gap-6">
           <p className="eyebrow text-madder">

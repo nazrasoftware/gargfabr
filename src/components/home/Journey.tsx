@@ -72,7 +72,7 @@ const CHAPTERS: Chapter[] = [
 export function Journey() {
   return (
     <section id="journey" className="relative bg-cotton" aria-label="From cotton to your bed">
-      <div className="mx-auto max-w-[1440px] px-4 pb-10 pt-28 sm:px-8 lg:pb-0 lg:pt-36">
+      <div className="mx-auto max-w-[1440px] px-4 pb-10 pt-28 sm:px-8 lg:pb-0 lg:pt-16">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <Reveal>
